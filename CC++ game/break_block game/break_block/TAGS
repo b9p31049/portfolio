@@ -1,0 +1,300 @@
+
+ball.cpp,850
+void Ball::init(){init5,48
+void Ball::init(){Ball::init5,48
+void Ball::model(){model16,326
+void Ball::model(){Ball::model16,326
+void Ball::view(){view22,435
+void Ball::view(){Ball::view22,435
+double Ball::get_next_x(){	return px + dx * speed; }get_next_x32,631
+double Ball::get_next_x(){	return px + dx * speed; }Ball::get_next_x32,631
+double Ball::get_next_y(){	return py + dy * speed; }get_next_y33,684
+double Ball::get_next_y(){	return py + dy * speed; }Ball::get_next_y33,684
+void Ball::reflect_x(){ dx *= -1.0; }reflect_x36,759
+void Ball::reflect_x(){ dx *= -1.0; }Ball::reflect_x36,759
+void Ball::reflect_y(){ dy *= -1.0; }reflect_y37,797
+void Ball::reflect_y(){ dy *= -1.0; }Ball::reflect_y37,797
+void Ball::change_dir( double rate ){change_dir40,914
+void Ball::change_dir( double rate ){Ball::change_dir40,914
+
+ball.h,399
+class Ball : public MVCObject{Ball6,67
+  double px,py;px8,106
+  double px,py;Ball::px8,106
+  double px,py;py8,106
+  double px,py;Ball::py8,106
+  double dx,dy;dx9,122
+  double dx,dy;Ball::dx9,122
+  double dx,dy;dy9,122
+  double dx,dy;Ball::dy9,122
+  double speed;speed10,138
+  double speed;Ball::speed10,138
+  std::string text;text11,154
+  std::string text;Ball::text11,154
+
+block.cpp,994
+Block::Block( double x, double y, std::string t, int f, int b ){Block4,37
+Block::Block( double x, double y, std::string t, int f, int b ){Block::Block4,37
+void Block::view(){view15,344
+void Block::view(){Block::view15,344
+bool Block::is_alive(){is_alive25,518
+bool Block::is_alive(){Block::is_alive25,518
+void Block::kill(){kill30,593
+void Block::kill(){Block::kill30,593
+bool Block::is_horizontal_hit( double bx, double by ){is_horizontal_hit35,668
+bool Block::is_horizontal_hit( double bx, double by ){Block::is_horizontal_hit35,668
+bool Block::is_vertical_hit( double bx, double by ){is_vertical_hit38,808
+bool Block::is_vertical_hit( double bx, double by ){Block::is_vertical_hit38,808
+bool Block::is_top_hit( double bx, double by ){is_top_hit41,918
+bool Block::is_top_hit( double bx, double by ){Block::is_top_hit41,918
+bool Block::is_btm_hit( double bx, double by ){is_btm_hit44,1033
+bool Block::is_btm_hit( double bx, double by ){Block::is_btm_hit44,1033
+
+block.h,554
+class Block : public MVCObject{Block6,72
+  double px,py;px8,113
+  double px,py;Block::px8,113
+  double px,py;py8,113
+  double px,py;Block::py8,113
+  std::string text;text9,129
+  std::string text;Block::text9,129
+  double width;width10,149
+  double width;Block::width10,149
+  int fore_color,back_color;fore_color11,165
+  int fore_color,back_color;Block::fore_color11,165
+  int fore_color,back_color;back_color11,165
+  int fore_color,back_color;Block::back_color11,165
+  bool alive;alive12,194
+  bool alive;Block::alive12,194
+
+game.cpp,402
+void Game::init(){init4,31
+void Game::init(){Game::init4,31
+void Game::model(){model28,795
+void Game::model(){Game::model28,795
+void Game::controller(){controller65,1849
+void Game::controller(){Game::controller65,1849
+void Game::view(){view70,1912
+void Game::view(){Game::view70,1912
+bool Game::is_game_over(){is_game_over78,2031
+bool Game::is_game_over(){Game::is_game_over78,2031
+
+game.h,501
+class Game : MVCObject{Game8,107
+  int frame_counter;frame_counter10,139
+  int frame_counter;Game::frame_counter10,139
+  double game_over_line;game_over_line11,160
+  double game_over_line;Game::game_over_line11,160
+  Paddle paddle;paddle12,185
+  Paddle paddle;Game::paddle12,185
+  Ball ball;ball13,202
+  Ball ball;Game::ball13,202
+  Wall wall;wall14,215
+  Wall wall;Game::wall14,215
+  std::vector< Block > blocks;blocks15,228
+  std::vector< Block > blocks;Game::blocks15,228
+
+main.cpp,178
+Game game;game4,36
+void initialize(){initialize6,48
+void update(){update14,188
+void draw(){draw23,326
+void kill(){kill32,443
+int main( int ac, char *av[] )main36,474
+
+Makefile,416
+LIBRARY_DIRECTORY = ../pdcurses_libraryLIBRARY_DIRECTORY7,178
+COMPILE		= cl.exe -nologo -I$(LIBRARY_DIRECTORY) -c -utf-8 -EHscCOMPILE8,218
+TARGET_NAME = demoTARGET_NAME14,420
+OBJS		= main.obj paddle.obj wall.obj ball.obj block.obj game.objOBJS22,622
+LIBRARY = pdcurses.libLIBRARY47,1132
+LINK		= link.exe -nologo user32.lib advapi32.lib $(LIBRARY_DIRECTORY)/$(LIBRARY) -out:$(TARGET_NAME).exe LINK72,1754
+
+mvcobject.h,378
+class MVCObject{MVCObject3,14
+  virtual void init(){}init5,39
+  virtual void init(){}MVCObject::init5,39
+  virtual void controller(){}controller6,63
+  virtual void controller(){}MVCObject::controller6,63
+  virtual void model(){}model7,93
+  virtual void model(){}MVCObject::model7,93
+  virtual void view(){}view8,118
+  virtual void view(){}MVCObject::view8,118
+
+paddle.cpp,504
+void Paddle::init(){init7,64
+void Paddle::init(){Paddle::init7,64
+void Paddle::controller(){controller16,306
+void Paddle::controller(){Paddle::controller16,306
+void Paddle::view(){view24,530
+void Paddle::view(){Paddle::view24,530
+bool Paddle::is_hit( double bx, double by){is_hit32,702
+bool Paddle::is_hit( double bx, double by){Paddle::is_hit32,702
+double Paddle::get_rate( double bx, double by ){get_rate38,909
+double Paddle::get_rate( double bx, double by ){Paddle::get_rate38,909
+
+paddle.h,299
+class Paddle : public MVCObject{Paddle7,68
+  double px,py;px9,109
+  double px,py;Paddle::px9,109
+  double px,py;py9,109
+  double px,py;Paddle::py9,109
+  std::string text;text10,125
+  std::string text;Paddle::text10,125
+  double width;width11,145
+  double width;Paddle::width11,145
+
+sys.cpp,5557
+namespace sys{sys14,203
+  int COL_RED = COLOR_RED;COL_RED16,219
+  int COL_RED = COLOR_RED;sys::COL_RED16,219
+  int COL_WHITE = COLOR_WHITE;COL_WHITE17,246
+  int COL_WHITE = COLOR_WHITE;sys::COL_WHITE17,246
+  int COL_BLACK = COLOR_BLACK;COL_BLACK18,277
+  int COL_BLACK = COLOR_BLACK;sys::COL_BLACK18,277
+  int COL_BLUE = COLOR_BLUE;COL_BLUE19,308
+  int COL_BLUE = COLOR_BLUE;sys::COL_BLUE19,308
+  int COL_GREEN = COLOR_GREEN;;COL_GREEN20,337
+  int COL_GREEN = COLOR_GREEN;;sys::COL_GREEN20,337
+  int COL_CYAN = COLOR_CYAN;COL_CYAN21,369
+  int COL_CYAN = COLOR_CYAN;sys::COL_CYAN21,369
+  int COL_MAGENTA = COLOR_MAGENTA;COL_MAGENTA22,398
+  int COL_MAGENTA = COLOR_MAGENTA;sys::COL_MAGENTA22,398
+  int COL_YELLOW = COLOR_YELLOW;COL_YELLOW23,433
+  int COL_YELLOW = COLOR_YELLOW;sys::COL_YELLOW23,433
+  int STYLE_NORMAL = A_NORMAL;STYLE_NORMAL24,466
+  int STYLE_NORMAL = A_NORMAL;sys::STYLE_NORMAL24,466
+  int STYLE_BOLD = A_BOLD;STYLE_BOLD25,497
+  int STYLE_BOLD = A_BOLD;sys::STYLE_BOLD25,497
+  int STYLE_UNDERLINE = A_UNDERLINE;STYLE_UNDERLINE26,524
+  int STYLE_UNDERLINE = A_UNDERLINE;sys::STYLE_UNDERLINE26,524
+  int STYLE_BLINK = A_BLINK;STYLE_BLINK27,561
+  int STYLE_BLINK = A_BLINK;sys::STYLE_BLINK27,561
+  int input;input29,593
+  int input;sys::input29,593
+  int input_mod;input_mod30,606
+  int input_mod;sys::input_mod30,606
+  int fps;fps31,623
+  int fps;sys::fps31,623
+  double mspf;mspf32,634
+  double mspf;sys::mspf32,634
+  long last_time;last_time33,649
+  long last_time;sys::last_time33,649
+  std::string format(const char* format, ...)format38,802
+  std::string format(const char* format, ...)sys::format38,802
+  long get_time() {get_time56,1379
+  long get_time() {sys::get_time56,1379
+  void wait( long msec ){wait64,1601
+  void wait( long msec ){sys::wait64,1601
+  int get_rand( int max ){get_rand75,1857
+  int get_rand( int max ){sys::get_rand75,1857
+  void init( int fps ){init83,2052
+  void init( int fps ){sys::init83,2052
+  void exit(){exit126,2917
+  void exit(){sys::exit126,2917
+  void update(){update134,3100
+  void update(){sys::update134,3100
+  void erase_screen(){erase_screen145,3359
+  void erase_screen(){sys::erase_screen145,3359
+  void draw(){draw152,3540
+  void draw(){sys::draw152,3540
+  int get_screen_w(){get_screen_w159,3722
+  int get_screen_w(){sys::get_screen_w159,3722
+  int get_screen_h(){get_screen_h165,3797
+  int get_screen_h(){sys::get_screen_h165,3797
+  bool is_utf8( std::string &str ){is_utf8174,4013
+  bool is_utf8( std::string &str ){sys::is_utf8174,4013
+  int strlen_utf8( std::string &str ){strlen_utf8182,4170
+  int strlen_utf8( std::string &str ){sys::strlen_utf8182,4170
+  void print_utf8( int x, int y, std::string &str ){print_utf8191,4326
+  void print_utf8( int x, int y, std::string &str ){sys::print_utf8191,4326
+  void print( int x, int y, std::string &str ){print237,5052
+  void print( int x, int y, std::string &str ){sys::print237,5052
+  void print( int x, int y, const char *sptr ){print246,5210
+  void print( int x, int y, const char *sptr ){sys::print246,5210
+  void print( int x, int y, string_buffer &strb ){print251,5311
+  void print( int x, int y, string_buffer &strb ){sys::print251,5311
+  int last_style = 0;last_style264,5662
+  int last_style = 0;sys::last_style264,5662
+  int last_no = 0;last_no265,5684
+  int last_no = 0;sys::last_no265,5684
+  int attr_num = 0;attr_num266,5703
+  int attr_num = 0;sys::attr_num266,5703
+  std::map< int, int > attrs;attrs267,5723
+  std::map< int, int > attrs;sys::attrs267,5723
+  void set_style( int fore_color, int back_color, int style ){set_style268,5753
+  void set_style( int fore_color, int back_color, int style ){sys::set_style268,5753
+  void reset_style(){reset_style278,6100
+  void reset_style(){sys::reset_style278,6100
+  void display_cursor( bool flg ){display_cursor286,6334
+  void display_cursor( bool flg ){sys::display_cursor286,6334
+  int get_mouse_x(){get_mouse_x293,6543
+  int get_mouse_x(){sys::get_mouse_x293,6543
+  int get_mouse_y(){get_mouse_y297,6590
+  int get_mouse_y(){sys::get_mouse_y297,6590
+  bool is_mouse_pressed( int no ){is_mouse_pressed301,6637
+  bool is_mouse_pressed( int no ){sys::is_mouse_pressed301,6637
+  int get_mouse_pressed(){get_mouse_pressed315,6950
+  int get_mouse_pressed(){sys::get_mouse_pressed315,6950
+  bool get_mouse_l(){get_mouse_l321,7066
+  bool get_mouse_l(){sys::get_mouse_l321,7066
+  bool get_mouse_m(){get_mouse_m324,7121
+  bool get_mouse_m(){sys::get_mouse_m324,7121
+  bool get_mouse_r(){get_mouse_r327,7176
+  bool get_mouse_r(){sys::get_mouse_r327,7176
+  void play_beep(){play_beep334,7376
+  void play_beep(){sys::play_beep334,7376
+  void flash_screen(){flash_screen339,7436
+  void flash_screen(){sys::flash_screen339,7436
+  std::string get_key_info( int key){get_key_info347,7621
+  std::string get_key_info( int key){sys::get_key_info347,7621
+  int get_key(){get_key352,7722
+  int get_key(){sys::get_key352,7722
+  bool is_key_pressed(){is_key_pressed356,7759
+  bool is_key_pressed(){sys::is_key_pressed356,7759
+  bool get_shift_key(){get_shift_key360,7827
+  bool get_shift_key(){sys::get_shift_key360,7827
+  bool get_ctrl_key(){get_ctrl_key367,8009
+  bool get_ctrl_key(){sys::get_ctrl_key367,8009
+  bool get_alt_key(){get_alt_key374,8194
+  bool get_alt_key(){sys::get_alt_key374,8194
+  bool is_escape(){is_escape382,8371
+  bool is_escape(){sys::is_escape382,8371
+
+sys.h,1418
+namespace sys {sys5,51
+  class string_buffer : public std::stringstream{string_buffer23,392
+  class string_buffer : public std::stringstream{sys::string_buffer23,392
+	std::string text;text25,452
+	std::string text;sys::string_buffer::text25,452
+	int style;style26,471
+	int style;sys::string_buffer::style26,471
+	int fore_color;fore_color27,483
+	int fore_color;sys::string_buffer::fore_color27,483
+	int back_color;back_color28,500
+	int back_color;sys::string_buffer::back_color28,500
+	string_buffer( int f = COL_WHITE, int b = COL_BLACK, int s = STYLE_NORMAL ) : std::stringstream(){string_buffer29,517
+	string_buffer( int f = COL_WHITE, int b = COL_BLACK, int s = STYLE_NORMAL ) : std::stringstream(){sys::string_buffer::string_buffer29,517
+	string_buffer( const char *s )  : std::stringstream(){string_buffer34,672
+	string_buffer( const char *s )  : std::stringstream(){sys::string_buffer::string_buffer34,672
+	void reset(){reset41,826
+	void reset(){sys::string_buffer::reset41,826
+	virtual ~string_buffer(){~string_buffer45,897
+	virtual ~string_buffer(){sys::string_buffer::~string_buffer45,897
+	operator std::string& () {operator std::string&47,927
+	operator std::string& () {sys::string_buffer::operator std::string&47,927
+	string_buffer& operator = ( const char *s ) {operator =51,991
+	string_buffer& operator = ( const char *s ) {sys::string_buffer::operator =51,991
+
+wall.cpp,626
+bool Wall::is_top_wall_hit( double px, double py ){is_top_wall_hit3,19
+bool Wall::is_top_wall_hit( double px, double py ){Wall::is_top_wall_hit3,19
+bool Wall::is_btm_wall_hit( double px, double py ){is_btm_wall_hit6,90
+bool Wall::is_btm_wall_hit( double px, double py ){Wall::is_btm_wall_hit6,90
+bool Wall::is_left_wall_hit( double px, double py ){is_left_wall_hit9,180
+bool Wall::is_left_wall_hit( double px, double py ){Wall::is_left_wall_hit9,180
+bool Wall::is_right_wall_hit( double px, double py ){is_right_wall_hit12,252
+bool Wall::is_right_wall_hit( double px, double py ){Wall::is_right_wall_hit12,252
+
+wall.h,41
+class Wall : public MVCObject{Wall6,55

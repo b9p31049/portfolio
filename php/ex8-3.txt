@@ -1,0 +1,4 @@
+これはテスト用のファイルです．ファイルの操作の練習問題で利用します．
+このファイルは<font color="blue">青色</font>のように色の記号で文字を囲むとその文字がその色で着色されます．
+着色される色は<font color="blue">青色</font>と<font color="red">赤色</font>と<font color="green">緑色</font>です
+それ以外の文字は通常の色となります
