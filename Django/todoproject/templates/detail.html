@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+detail
+</div>
+{% endblock header %}
+
+{% block content %}
+{% for item in object_list %}
+
+<p>{{ item.title }} 期日{{ item.duedate | date:": o / n / j"}}</p>
+
+{% endfor %}
+{% endblock content %}
