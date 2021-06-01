@@ -1,0 +1,20 @@
+開発環境の起動、停止、削除
+
+コンテナ起動
+1, docker-compose up -d
+
+2, docker-compose up
+    (アクセスログなどを確認することができる)
+
+停止
+docker-compose stop
+
+削除
+docker-compose down
+
+
+    ※　もし、A sever is already running エラーで出たら、
+    
+    rm tmd/pids/server.pid 
+    
+    でsever.pidファイルを削除する

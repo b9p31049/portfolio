@@ -1,0 +1,51 @@
+Hashオブジェクトの解説
+
+    -中カッコを使う-
+    user2 = { id: 2, name: '二郎'}
+    
+    キー(Symbol)で呼び出すことができる
+    例、:name
+    
+    
+    -stringで呼び出す方法-
+    
+    
+    { 'id' => 3, 'name' => '三郎' }
+    
+    
+    -Hashの階層構造-
+    
+        user4 = {
+       name: '四郎',
+       test_results: {
+         math: 70,
+         science: 80
+       }
+      }
+
+        書き換えることも可能
+
+        
+    .keys = キーの取得
+    
+    .values = 値の取得
+    
+    eachメソッドも使用可能
+        
+
+メモ
+変数の中身の表示方法
+    var = 10
+    puts var
+    puts "#{var}"
+    puts '#{var}'
+
+
+    --Hashの中身の削除---
+    
+    deleteメソッド
+    例
+    user4.delete(:name)
+    
+    
+    

@@ -1,0 +1,19 @@
+whalesayイメージを使用して
+クジラを喋らせる
+
+    docker run docker/whalesay cowsay Hello!!
+    
+    復習
+    docker run コマンドは次の三つをまとめたもの
+
+    ・docker pull イメージの取得
+    ・docker create コンテナの作成
+    ・docker start コンテナの起動
+    
+    docker run （イメージ名）　（コンテナ内で呼び出すコマンド）
+
+
+ 用語
+ 　エイリアス　
+  　同じもの、windowsでいう、ファイルのショートカットなど
+

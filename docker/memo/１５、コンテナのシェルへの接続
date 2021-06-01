@@ -1,0 +1,48 @@
+コンテナのシェルへの接続
+
+２通り
+
+１    docker attach コンテナ名ORコンテナID
+    
+    
+２    docker exec -it コンテナ名ORコンテナID /bin/bash
+    
+  
+  まず１の場合(attach)
+        ① ubuntuのコンテナを立ち上げてzshを起動させる
+        
+        docker run --name connect-test -it -d ubuntu /bin/bash
+        
+        ② docker attach　でこのコンテナに接続する
+        
+        docker attach コンテナ名 
+        
+        
+    コンテナ内のディレクトリを見ることができる
+    
+    
+    抜ける場合
+    
+    cntroll + p, controll + q で抜ける場合、コンテナは起動したまま
+    
+    
+    exitで抜けた場合は、停止される
+    
+    
+    
+  2の場合（exec）
+  
+    docker exec -it コンテナ名 /bin/bash
+    
+    exit でも　起動したまま
+    
+    
+結論　exec の方が安心
+  
+  
+    
+    
+        
+
+    
+    

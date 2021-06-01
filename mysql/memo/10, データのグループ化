@@ -1,0 +1,24 @@
+データのグループ化
+
+【group by】
+
+slect
+ 列名
+from 
+テーブル名
+group by 列名;
+
+
+例
+-- prefecture_id 都道府県ID
+
+select prefecture_id, count(*) from users group by prefecture_id    
+
+
+ポイント
+ 
+ 重複したデータを除外してデータを取得
+ 
+ distinct
+ 
+ 

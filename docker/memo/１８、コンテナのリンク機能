@@ -1,0 +1,44 @@
+link オプションの使い方
+
+
+    docker attach を　使用する場合
+    
+    docker run --link コンテナ名：リンク先のコンテナ名
+    
+    
+linkオプションをつけた場合の動作
+
+    コンテナ名　または別名（エイリアス）でリンク先に通信できるようになる
+    
+    リンク先の環境変数や、リンク先コンテナのネットワークに関する環境変数が起動したコンテナに追加される
+    
+    
+作業
+　①reverse-proxy ディレクトリの作成
+ 
+　②reverse_proxy.conf 作成
+ 
+ ③上の設定ファイルをnginxの設定ファイルディレクトリに配置して、
+ 新しいイメージを作成するDockerfile を作成する
+ 
+ 
+④　Dockerfile の作成
+
+⑤　docker build -t reserver-proxy .
+
+⑥ docker run --name static-site -e AUTHOR="Shun Takahashi" -d docke
+rsamples/static-site
+
+ -e は　環境変数の設定
+ 名前を設定しておくといい
+ 
+ 
+ ⑦
+ 　docker run --name reverse-proxy -p 8080:8080 --link static-site:ss -d reverse-proxy
+  
+  
+  ⑧ 8080開く
+  
+  
+環境変数を使うときのみ使用する
+

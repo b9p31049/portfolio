@@ -1,0 +1,44 @@
+新しいwebページの作成
+
+設定やファイルの理解
+
+railsにはジェレネーターという全てのファイルを自動で生成してくれるものがある
+
+
+・だが理解するために、1から手作業で行う
+
+
+１、ルーティングの設定
+
+    config/routes.rb
+    
+    root 'boards#index'
+    を書き込む
+    
+    
+    root ・・　localhost:3000にアクセスが来た場合のルーティングを意味している。
+    
+ここでは、「localhost:3000にアクセスが来たら
+BoardsControllerクラスのindexメソッドを実行する」という意味である
+
+
+２、新しくControllerを作成するとき
+
+    ・app/controllersのディレクトリの下に作成
+    ・boards_controller.rb　を作成
+    
+    ・Controllerを定義する際、ApplicationControllerを継承する
+    これによって、定義したクラスがcontrollerとして機能する
+    
+    
+３、viewの作成
+
+    ・app/views/の下に作成
+    
+    ・今回はboardsというディレクトリを作成
+    
+    その中に 今回はindexアクションのビューなので、index.html.erb を作成
+    
+.html.erbは、html形式のビューをerbテンプレートで記述する際に付けるものです。
+
+# webページのコンテンツを表示する処理のこと、レンダリングという。

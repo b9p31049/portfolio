@@ -1,0 +1,28 @@
+interger,float,enumeratorのオブジェクト
+
+四捨五入
+round
+
+切り上げ
+ceil
+
+切り捨て
+floor
+
+
+ーーーーーーーーーーーーーー
+ひとつ目の書き方(複数行な処理の場合)
+
+   3.times
+    3.times do |i|
+    puts i
+    end
+
+    do~endまでが固まりブロック
+    
+二つ目（一行で収まる場合）
+※空白を開けること
+
+    3.times { |num| puts num }
+
+

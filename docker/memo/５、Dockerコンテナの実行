@@ -1,0 +1,35 @@
+docker コンテナの実行
+
+
+    docker run hello-world
+    
+    dockerコマンド　サブコマンド　イメージの指定
+    
+    
+docker run コマンドは次の三つをまとめたもの
+
+    ・docker pull イメージの取得
+    ・docker create コンテナの作成
+    ・docker start コンテナの起動
+    
+    
+用語
+    
+    ビルド
+    
+    dockerの文脈において、Docker file からdockerイメージを作成することをビルドという。
+    
+    
+    レジストリ
+    
+    リポジトリを管理する場所のこと
+    dockerhubなど
+    
+    
+    リポジトリ
+    
+    Dockerイメージを保管するための入れ物
+    
+
+
+　

@@ -1,0 +1,38 @@
+Docker コミットの解説
+
+    コンテナからイメージの作成
+    
+    docker commit <コンテナ名またはID>　<イメージ名>：<タグ名>
+    
+
+①仮にubuntuコンテナに入る
+
+    docker run --name commit-test -it -d --rm ubuntu /bin/bash
+    
+        
+    docker exec -it commit-test /bin/bash
+    
+    
+② ダミーファイルの作成
+
+③　戻って、
+    docker commit commit-test commit-test:ver2
+    
+イメージが作成される
+
+
+    イメージの確認
+    docker images 
+    
+    履歴の確認
+    上から新しい順
+    
+    docker history イメージ名：タグ名
+    
+    
+用語
+    リバースプロキシ
+クライアントとサーバの通信の間に入って、サーバの応答を代理（proxy）しつつ通信を中継する機能、あるいはその役割を担うサーバのことをリバースプロキシといいます。
+    
+    
+     

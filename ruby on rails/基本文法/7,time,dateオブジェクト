@@ -1,0 +1,32 @@
+Time , Dateオブジェクト
+
+日付時間
+    
+    Time.now
+    時間の表示
+    
+    Time.now.zone
+    表示している時間の場所
+    
+    datetime = Time.new(2021, 3, 19, 18, 20)
+    好きな時間の作成
+    
+    datetime.strftime('%Y年 %m月 %d日 %H時 %M分)
+    好きな表示方法
+    
+日のみ
+
+     require 'date'
+     外部ライブラリの読み込み
+     （importのようなもの？）
+     
+     Date.today
+     日付の表示
+     
+     Date.new
+     自分の好きな日付の追加
+     
+     Date.strftime('%Y年 %m月 %d日' )
+     好きな表示方法
+     
+     

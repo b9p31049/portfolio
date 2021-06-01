@@ -1,0 +1,61 @@
+arrayオブジェクト
+    
+    arrayとは、listのようなもの
+    
+    型の違うものも、要素として一緒に格納することができる。
+    
+    [1, '日本', 1.5]
+    
+    
+追加方法
+    
+    pushメソッドの使用
+    
+    ①　arr.push['一つ目']
+
+    ② 　arr << '一つ目'
+    ゲタという
+    
+    どちらかで追加可能
+    
+    
+%w[あ　い　う]　
+    
+    %wをつけることでスペースで区切ることができる。
+    
+繰り返し処理
+
+    %w[あ い う].each do |str|
+    puts str
+    end
+    
+    each・・・要素を順番に取り出す
+
+    puts・・・表示
+    
+    繰り返しの終了・・・break
+    
+    繰り返し一部分だけ終了・・・next
+    
+    => ["あ", "い", "う"]
+    irb(main):017:1* arr.each do |str|
+    irb(main):018:1*   break if str == 'い'
+    irb(main):019:1*   puts str
+    irb(main):020:0> end
+    あ
+    => nil
+    irb(main):021:1* arr.each do |str|
+    irb(main):022:1*   next if str == 'い'
+    irb(main):023:1*   puts str
+    irb(main):024:0> end
+    あ
+    う
+    => ["あ", "い", "う"]
+    
+
+多重代入
+
+    foo, bar = [1, 2]
+    
+
+

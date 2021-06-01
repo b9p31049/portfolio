@@ -1,0 +1,42 @@
+docker hub 
+
+　dockerリポジトリの作成
+ 
+ 
+    ①　docker hub にログイン
+    
+    ②　docker hub に　リポジトリを作成
+    
+    
+　docker イメージをリポジトリに作成
+ 
+ レジストリサーバー
+ 
+    docker hub にログイン
+    $ docker login
+    
+    Quay.io
+    $docker login quay.io
+    
+
+ Docker Hunにおけるタグ付けルール
+ 
+    docker tag 元のファイル名　プッシュ先　：タグ名
+    
+    docker tag docker-whale b9p31049/docker-whale:var1
+    
+
+Docker Hub に　Pushする
+
+    docker push DockerID/イメージ名：タグ名
+    
+    
+ローカルのイメージ削除
+
+    docker rmi -f イメージID
+    
+
+プルで取得
+    
+    docker pull DockerID/イメージ名：タグ名
+    

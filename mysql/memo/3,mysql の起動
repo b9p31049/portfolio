@@ -1,0 +1,37 @@
+日本語の文字化け
+暗号化の設定を行う
+
+
+サーバーの起動
+
+mysql.server start
+
+
+セキュリティの設定
+
+mysql_secure_installation
+
+
+rootユーザーでログイン
+
+mysql -u root -p 
+
+    -u　ユーザー名の指定
+    
+    -p パスワードを使って
+    ログイン
+    
+    
+再起動
+
+mysql.server restart
+
+
+止める
+
+mysql.server stop
+
+
+起動状態の確認
+
+mysql.server status

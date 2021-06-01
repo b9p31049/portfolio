@@ -1,0 +1,14 @@
+日付と時刻の計算
+
+・現在の日付      current_date
+・現在の時刻      current_timestamp
+
+・n日後の日付     d + n
+・n日前の日付     d - n
+
+・x時間後の時刻     interval 'x hour'
+・x時間前の時刻    - interval 'x hour'
+
+・extract ・・・　日付や時刻の特定の部分（年や月）まで取り出す
+
+

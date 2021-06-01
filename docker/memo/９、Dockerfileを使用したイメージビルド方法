@@ -1,0 +1,40 @@
+Dockerfileを使用した、イメージのビルド方法
+
+
+    元となるイメージの呼び出し
+        FROM イメージ名：コマンド
+        
+    apt-getをアップデートした後に、fortunesをインストール
+        RUN apt-get -y updata && apt-get install -y fortunes
+        
+    CMDは、コンテナが作成された後に、実行するコマンドを設定
+        CMD /usr/games/fortune | cowsay
+        
+        
+Dockerfileからイメージをビルドするコマンド
+
+    docker build -t docker-whale .
+    
+    docker build -t イメージの名前　.
+    
+    最後のピリオドはビルドコンテキストの指定で、カレントディレクトリ（今いるディレクトリ）を表している。
+    そこにあるdockerfileが読み込まれる
+        
+        
+    docker images で確認
+
+    実行
+    docker run 作成したイメージ名
+    
+    
+キャッシュの無効化
+
+    docker build --no-cache -t 作成するイメージ名 .
+    
+    ピリオドつけ忘れない
+    
+    
+noneイメージを削除
+
+　   docker rmi ID -f
+    

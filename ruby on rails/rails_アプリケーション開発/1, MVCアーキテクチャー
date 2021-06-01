@@ -1,0 +1,7 @@
+MVCアーキテクチャー
+
+・Model（データの管理、データの処理）
+・view（HTMLを作成する部分）
+・Controller (ModelとViewをまとめる)
+
+

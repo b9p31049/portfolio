@@ -1,0 +1,84 @@
+ブランチを利用した開発の進め方
+
+    masterブランチをリリース用のブランチに、開発はトピックブランチを作成して進めるのが基本
+
+
+Githubを利用した開発手順
+
+    プルリクエストとは
+        自分の変更したコードをリポジトリに取り込んでもらえるように依頼する機能
+        
+        レビューも無しにリポジトリに取り込んでしまうとリスクがあるため
+        
+        
+    プルリクエストの手順
+    
+        ワークツリー
+    　   ①masterブランチを最新に更新
+        
+        ②ブランチを作成
+        
+        ③ファイルを変更
+        
+        ④変更をコミット
+        
+
+        ローカルリポジトリ
+        ⑤　githubへプッシュ
+        
+        ⑥　プルリクエストを送る
+        
+        ⑦コードレビュー
+        
+        ⑧プルリクエストをマージ
+        
+        ⑨ブランチを削除
+
+    実際に
+    　　①git branch 
+      masterにいるか確認
+      
+      　②git pull origin master
+       masterを最新に更新
+    
+       ③git checkout -b ブランチ名
+       ブランチの作成と切り替え
+       
+       ④ファイルの変更
+       
+       ⑤git add , git commit, 
+       
+       ⑥git push origin 現在のブランチ名
+       
+       ⑦github　で　pull requestを送る
+       
+       ⑧　レビューする
+       　もしよければ review changes　の　
+        approveを選択し、submit review
+        
+        
+    ローカルをgithubと同じにする
+    
+    　①強制master消す
+    git branch -D master
+    
+     ②リモートからローカルリポジトリに取り出す
+     git fetch
+     
+     ③ masterブランチを作成して、先程のローカルリポジトリを、ワークツリーに反映
+     git branch master origin/master
+     
+     
+    ポイント     
+     git pull origin master
+       リモートからひっぱてきて、ワークツリーのmasterを最新に更新
+    
+    
+    
+    
+    ※注意点
+    
+    　pushしたコミットをリベースするのはNG
+     
+     git push -f NGだめ
+     

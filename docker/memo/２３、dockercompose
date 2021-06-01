@@ -1,0 +1,32 @@
+Docker compose 
+
+
+    開発環境などに使用される
+    
+    ymlファイルにDBを記載することで、アプリケーションに必要なコンテナをまとめて起動できる
+    
+    
+Compose 実行のステップ
+
+    １、Dockerfileを用意するか、使用するイメージをDocker hubなどに用意する
+    
+    ２、docker-compose.ymlを定義する
+    
+    ３、docker-compose up を実行する
+    
+    
+version: '3' 
+services: 
+    web:
+        build: .
+        ports:
+        - "5000:5000"
+        volumes:
+        - .:/code
+        - logvolume01:/var/log
+        links:
+        - redis
+    redis:
+        image: redis
+volumes: 
+    logvolume01: {}

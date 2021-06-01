@@ -1,0 +1,48 @@
+作業の一時的避難
+
+     git stash
+
+     git stash save
+
+
+     コミットするまで作業は進んではいないけど、急遽ほかのブランチに移動しなければいけない
+
+
+避難さした作業の確認
+
+    git stash list
+    
+    
+避難さした作業を復元する
+    
+    #最新
+    git stash apply
+    
+    ＃ステージの状況も復元
+    git stash apply --index
+    
+    
+    #特定の作業の復元
+    git stash apply スタッシュ名
+    
+    git stash apply stash@{1}
+    
+    
+一時避難さした作業の削除
+
+    #最新
+    git stash drop
+    
+    #特定の作業の削除
+    git stash drop スタッシュ名
+    
+    git stash drop stash@{1}
+    
+    #全削除
+     git stash clear
+     
+     
+復習
+　変更を元に戻す
+ 
+ 　git checkout ファイル名

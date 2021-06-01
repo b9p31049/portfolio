@@ -1,0 +1,31 @@
+２４、docker-compose
+
+docker-compose run web django-admin.py startproject examplepj .
+
+
+
+    docker-compose run web
+    
+    docker-compose run <ymlに定義したwebサービス>
+    
+    
+    django-admin.py startproject examplepj .
+    
+    以降はwebサービスのコンテナの起動時に実行するコマンド
+    
+    
+    django-admin.pyは、djangoインストールした際に起動される
+    
+    startproject examplej .
+    
+    プロジェクトをexamplejという名前で作成
+    
+    
+setting.py で　設定設定
+
+
+
+    docker-compose up -d で起動
+    
+    
+docker-compose run web python3 manage.py startapp polls

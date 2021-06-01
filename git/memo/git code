@@ -1,0 +1,127 @@
+.git 
+
+objectsフォルダの中身が
+リポジトリ本体になる
+
+
+ Git add . 全て
+
+　
+ Git commit -v 
+ 変更内容をみれる
+
+　git commit -m 'メッセージ'
+
+
+ー Git diff 変更の差分の確認
+
+　git diff ローカルとステージ
+
+
+　git diff --staged ステージとリポジトリ
+ 
+ 
+ ー　変更履歴を確認する
+ 
+ git log
+ 
+ # 一行
+ git log --oneline
+ 
+ # 変更差分
+ git log -p index.html
+ 
+ #評するコミット数を制限
+ git log -n コミット数
+ 
+ 
+ ーファイルの削除
+ 
+ git rm ファイル名
+ 
+ git rm -r ディレクトリ名
+ 
+ # ファイルを残したい時
+ git rm --cached ファイル名
+ 
+ 元に戻す
+ 
+ git reset HEAD ファイル名
+ 
+ git checkout ファイル名 
+ 
+ 
+ ーファイルの移動
+ 
+git mv <旧ファイル><新ファイル>
+
+以下のコマンドと同じ
+
+mv <旧ファイル><新ファイル>
+git rm <旧ファイル>
+git add <新ファイル>
+
+
+ーリモートリポジトリにアップ
+
+新規追加（登録）
+
+git remote add origin <url>
+
+※　origin は　url の　ショートカット
+
+
+リモートリポジトリへ送信
+
+git push <リモート名> <ブランチ名>
+
+git push origin master
+
+git push -u origin master 
+
+※　-u 次回以降origin master にpushをするとき
+git push　のみで良くなる
+
+
+ーコマンドにエイリアス（ショートカット設定）
+
+git config --global alias.ci commit
+→commit を　ci とショートカットに設定
+
+st →　status
+
+br →　branch
+
+co →　checkout
+
+
+ー管理しないファイルはGitの管理から外す
+
+例、パスワードや人に見られたくないもの
+
+.gitignoreに書き込む
+
+# ルートディレクトリを指定
+/root.html
+
+# ディレクトリ以下を除外
+dir/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+

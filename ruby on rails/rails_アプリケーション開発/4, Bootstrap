@@ -1,0 +1,10 @@
+Bootstrapの導入
+
+    １、Gemfileに
+        
+        gem 'bootstrap','~> 4.0.0'
+        
+        を追加
+        
+        
+        

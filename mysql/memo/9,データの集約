@@ -1,0 +1,57 @@
+データの集約
+
+    集約関数
+    
+        sum・・合計
+        avg・・平均
+        min・・最小値
+        max・・最大値
+        count・・行数
+        
+sum
+
+例
+    select
+     sum(amount)
+    from
+     orders
+    where
+     order_time >= '2017-01-01 00:00:00' 
+     and order_time < '2017-02-01 00:00:00';
+     
+
+avg　
+
+例　
+    select avg(price) from products;
+    
+
+min 
+
+    select min(price) from products;
+    
+    
+max
+
+    select max(price) from products;
+    
+    
+null
+
+    可能であれば、nullが含まれないようにデータベース設計した方が、トラブルが減る
+    
+    
+count
+
+    -- ユーザーの人数
+    select count(*) from users;
+
+    -- 女性の人数
+    select count(*) as '女性' from users where gender = 2;
+
+
+-- ユニークユーザー
+
+    count(distinct user_id) from access_logs where request_month >= '2017-01-01' and request_month < '2017-02-01'; 
+
+     　distinct は、　重複をかぞないようにできる

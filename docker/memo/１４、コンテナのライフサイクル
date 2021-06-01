@@ -1,0 +1,29 @@
+コンテナのライフサイクル
+
+コンテナの作成 
+    docker create --name status-test -it alpine /bin/sh
+    
+
+現在実行中のコンテナの確認
+    docker ps 
+    
+    全て表示
+    docker ps -a
+    
+    
+コンテナの起動
+
+    docker start コンテナ名
+    
+    
+停止コンテナ、タグ無しイメージ、未使用ボリューム、未使用ネットワーク一括削除
+
+    docker system prune
+    
+    
+
+    
+
+    
+    
+    

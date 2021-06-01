@@ -1,0 +1,20 @@
+記述順序
+
+1. select　取得行を指定
+2. from　対象テーブルの指定
+3. where　絞り込み条件の指定
+4. group by　グループ化条件
+5. having　グループ化した後の絞り込み条件
+6. orfer by　並び替え条件を指定
+7. limit 取得する行数の指定
+
+
+実行順序
+
+1. from
+2. where
+3. group by
+4. having
+5. select
+6. orfer by
+7. limit 

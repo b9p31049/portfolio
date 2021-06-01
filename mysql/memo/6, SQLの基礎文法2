@@ -1,0 +1,95 @@
+SQLの基礎文法２
+
+【列の値に対して演算】
+
+    例　select name, price, price * 1.08 as 税込価格 from products;
+    
+
+【条件を指定してデータを取得できる　where】
+
+    select 列１, from テーブル名 where 条件；
+    
+
+【比較演算子の種類】
+
+    != 等しくない
+    in 含まれているか
+    not in 含まれていないか
+    is null 値がnull
+    is not null 値がnullではない
+    like パターンマッチング（あいまい検索）
+    between...and... 値が値の範囲内に含まれているか
+    
+    
+    例
+    -- products テーブルから全権取得
+    select * from products;
+
+    -- id が　1 の行を取得
+    select * from products where id = 1;
+
+    -- 名前が「商品0003」の行を取得
+    select * from products where name = '商品0003';
+
+    -- price が 1000より大きい行を取得
+    select * from products where price > 1000;
+
+    -- price　が 1000より小さい行を取得
+    select * from products where price < 1000;
+
+    -- price　が 100　でない行を取得
+    select * from products where price != 100;
+
+    -- 次のようにも書ける
+    select * from products where price <> 100;
+
+    -- idが1か2か3の行を取得
+    select * from products where id in(1,2,3);
+
+    -- idが1か2か3ではない行を取得
+    select * from products where id not in(1,2,3);
+
+    -- priceがnullではない行を取得
+    select * from products where price is not null;
+
+    -- priceがnullの行を取得
+    select * from products where price is null;
+
+    -- priceが1000から1900の行を取得
+    select * from products where price between 1000 and 1900;
+
+    -- これは次のようにandを使ってもかける。
+    select * from products where price >= 1000 and price <= 1900;
+
+    -- or 価格が１０００円　または　２０００円
+    select * from products where price = 1000 or price = 2000;
+
+
+
+【パターンマッチングによ流絞り込みlike】
+
+    select 列１... , from テーブル名 where 列名　like ワイルドカード文字;
+
+    ワイルドカード文字とは
+
+    １、%　０文字以上の任意の文字
+
+    ２、＿　任意の１文字
+
+
+    例
+    -- 名字　中　から始まるユーザー一覧
+    select * from users where  last_name like '中%';
+
+    -- 名字　中　を含むユーザー一覧
+    select * from users where last_name like '%中%';
+
+    -- 名前　子　で終わるユーザー一覧
+    select * from users where first_name like '%子';
+
+    -- 名字　子　で終わる３文字のユーザー一覧
+    select * from users where first_name like '__子';
+
+
+
+

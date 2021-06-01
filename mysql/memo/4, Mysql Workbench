@@ -1,0 +1,16 @@
+MySQL Workbench
+
+データベースの設計、作成、管理をビジュアルに行うことができるツール
+
+
+MySQL Workbenchから、mysqlserverに接続する方法
+
+
+1,サーバーの起動
+
+２、workbenchから、上のタブのdatabaseから、コネクト
+
+
+
+学習用のサンプルデータを取り込む
+

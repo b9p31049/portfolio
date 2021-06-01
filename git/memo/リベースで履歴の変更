@@ -1,0 +1,40 @@
+リベースで履歴を書き換える方法
+
+    直前のコミットをやり直す
+    git commit --amend
+    
+    
+    複数のコミットをやり直す
+     git commit -i コミットID
+     
+     pick を　edit に書き換えて修正して保存
+     
+    git commit --amend
+    内容の修正
+    
+    git rebase --continue
+    反映される
+    
+    git log --oneline 
+    で確認
+    
+
+コミットの並び替え、削除
+
+    git rebase -i HEAD~3
+    
+    履歴は古い順に表示される
+    git log とは逆のため注意が必要
+
+
+コミットを一つにまとめる
+
+    git rebase -i HEAD~3
+    
+    pick を　squash に書き換える
+    
+
+コミットを分割
+
+    git rebase -i HEAD~3
+    

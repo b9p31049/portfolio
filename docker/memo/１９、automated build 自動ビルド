@@ -1,0 +1,10 @@
+Automated Build 自動ビルドとは
+
+
+    Dockerfileをdockerhubにプッシュをすると、自動でビルドをしてくれる。
+    
+    pull する
+    
+    
+    
+docker hub と　git hub を連携させる

@@ -1,0 +1,73 @@
+git hub　とのやり取り
+
+ーやり取り先
+    git remote 
+    
+    # 対応するURLの表示
+    git remote -v
+    
+    
+ーリモートリポジトリの追加
+    
+    git remote add リモート名 リモートURL
+    
+    git push -u リモート名　ブランチ名
+    
+
+ーリモートから情報を取得（フェッチ）
+
+    git fetch リモート名
+    
+    リモートリポジトリ→ローカルリポジトリに情報が保存される
+    
+    ローカルリポジトリから→ツリー
+    
+    
+    git branch -a 
+    全てのブランチを確認できる
+    
+    git checkout remotes/origin/master 
+    
+    ワークツリーを上に切り替えるという意味
+    
+    cat home.html確認
+    
+    元に戻す
+    git checkout master
+    
+    ワークツリーに影響   　　
+    git merge origin/master
+    
+    
+ーリモートから情報を取得してマージまでを一度にやりたいとき
+
+    git pull リモート名　ブランチ名
+    または
+    git pull 
+    でも同じ意味
+
+    ↑　git fetch origin master
+       git merge origin/master
+    としているのと同じ意味
+    
+
+ー fetch が　おすすめ
+　　pullは注意が必要
+  
+  pull は　今現在いるブランチにマージされてしまう
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    

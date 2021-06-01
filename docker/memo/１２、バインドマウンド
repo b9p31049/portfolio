@@ -1,0 +1,19 @@
+バインドマウント
+
+    $ docker run --name some-nginx -v /some/content:   
+    
+    
+    前回１１、と変わったのは　ーv　が追加されただけ
+    
+    
+    -v /some/content:/usr/share/nginx/html:ro -d nginx
+    
+    
+    
+    Macの場合
+    
+    -v/Users/ユーザー名/docker-tutrial/html:/usr/share/nginx/html:ro
+    
+    
+    ro は　読み取り専用という意味
+    

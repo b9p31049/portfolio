@@ -1,0 +1,28 @@
+nginxコンテナの実行とデタッチモード
+
+    docker run --name some-nginx -d -p 8080:80 some-content-nginx
+    
+    
+    docker run --name (コンテナ名) -d \
+    -p (ホスト側のポート番号)：（コンテナ側のポート番号）\
+    イメージ名
+    
+    
+    -d は、　デタッチモード
+    バックグラウンドで実行をしてくれる
+    
+    
+サーバーを止める
+    
+    docker stop コンテナ名
+    
+起動しているサーバーの確認
+
+    docker ps
+    
+
+コンテナの削除
+
+    docker rm コンテナ名
+        
+    
